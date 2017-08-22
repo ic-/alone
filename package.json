@@ -1,31 +1,47 @@
 {
-  "name": "alone",
-  "version": "1.0.0",
-  "description": "workflow",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ic-/alone.git"
-  },
-  "keywords": [
-    "react",
-    "redux",
-    "koa",
-    "mongo"
-  ],
-  "author": "ic-",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ic-/alone/issues"
-  },
-  "homepage": "https://github.com/ic-/alone#readme",
-  "dependencies": {
-    "babel-loader": "^7.1.2",
-    "eslint": "^4.5.0",
-    "eslint-loader": "^1.9.0",
-    "webpack": "^3.5.5"
-  }
+	"name": "alone",
+	"version": "1.0.0",
+	"description": "workflow",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "webpack-dev-server --env development",
+		"build": "webpack --env production --profile --json > stats.js",
+		"lintJs": "eslint /app webpack.*.js --cache --fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ic-/alone.git"
+	},
+	"keywords": [
+		"react",
+		"redux",
+		"koa",
+		"mongo"
+	],
+	"author": "ic-",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ic-/alone/issues"
+	},
+	"homepage": "https://github.com/ic-/alone#readme",
+	"dependencies": {
+		"react": "^15.6.1",
+		"babili-webpack-plugin": "^0.1.2",
+		"css-loader": "^0.28.4",
+		"babel-loader": "^7.1.2",
+		"style-loader": "^0.18.2",
+		"eslint-loader": "^1.9.0",
+		"extract-text-webpack-plugin": "^3.0.0",
+		"webpack-dev-server": "^2.7.1"
+	},
+	"devDependencies": {
+		"eslint": "^4.4.1",
+		"eslint-config-airbnb": "^15.1.0",
+		"eslint-plugin-import": "^2.7.0",
+		"eslint-plugin-jsx-a11y": "^6.0.2",
+		"eslint-plugin-react": "^7.2.0",
+		"html-webpack-plugin": "^2.30.1",
+		"webpack": "^3.5.4"
+	}
 }

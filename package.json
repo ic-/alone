@@ -1,0 +1,31 @@
+{
+  "name": "alone",
+  "version": "1.0.0",
+  "description": "workflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ic-/alone.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "koa",
+    "mongo"
+  ],
+  "author": "ic-",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ic-/alone/issues"
+  },
+  "homepage": "https://github.com/ic-/alone#readme",
+  "dependencies": {
+    "babel-loader": "^7.1.2",
+    "eslint": "^4.5.0",
+    "eslint-loader": "^1.9.0",
+    "webpack": "^3.5.5"
+  }
+}

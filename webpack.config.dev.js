@@ -4,19 +4,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BabiliPlugin = require('babili-webpack-plugin');
 
-const PATHS = {
-    app: path.join(__dirname, 'client'),
-    build: path.join(__dirname, 'dist'),
-};
-
 module.exports = {
     devtool: 'eval-source-map',
     entry: {
-        app: PATHS.app,
-        vendor: ['react', 'babel-polyfill'],
+        "app": [
+            'eventsource-polyfill',
+            'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+            'babel-polyfill',
+            path.join(__dirname, 'client/index.js')
+        ],
+        "vendor": ['react', 'babel-polyfill'],
     },
     output: {
-        path: PATHS.build,
+        path: path.join(__dirname, '/dist'),
+        publicPath: '/assets/',
         filename: '[name].[hash].js',
     },
     module: {
@@ -53,24 +54,23 @@ module.exports = {
         ],
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            title: 'Webpack demo'
-        }),
-        new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin('styles.css'),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),  //hot
+        new ExtractTextPlugin('styles.css'),  //提取style
         new BabiliPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
+        new webpack.optimize.CommonsChunkPlugin({   //提取公用函数
             name: 'vendor',
         }),
+        new HtmlWebpackPlugin({
+            title: 'Webpack demo',
+            filename: 'index.html'
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+            }
+        })
     ],
-    devServer: {
-        host: process.env.host,
-        port: process.env.port,
-        // contentBase: path.join(__dirname, "dist"),
-        // compress: true,
-        hot: true,  //热替换
-        // inline: true,
-    },
     resolve: {
         extensions: ['.js', '.jsx', 'css', 'less']
     }

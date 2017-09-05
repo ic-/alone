@@ -1,15 +1,11 @@
-import { webpack } from 'webpack';
-import { WebpackDevServer } from 'webpack-dev-server';
-import config from '../webpack.config.js';
-
+const webpack = require('webpack')
+const WebpackDevServer = require('webpack-dev-server')
+const config = require('../webpack.config.dev.js')
 const compiler = webpack(config);
-console.log(compiler)
 let Server = new WebpackDevServer(compiler, {
-    publicPath: config.output.publicPath,
+    stats: { colors: true },
     inline: true,
     hot: true,
-    historyApiFallback: true,
-    color: true
 });
 
 Server.listen(8081, 'localhost', function (err, result) {

@@ -49,6 +49,8 @@ module.exports = {
         "no-unexpected-multiline": "off", //禁止出现令人困惑的多行表达式
         "valid-typeof": "off", //强制 typeof 表达式与有效的字符串进行比较
         "no-tabs": "off",
+        "no-unused-vars": "off",
+        "class-methods-use-this": "off",
     }
 };
 

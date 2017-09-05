@@ -1,23 +1,11 @@
-import React from 'react';
-import render from 'react-dom';
-import bbb from './aa'
+import 'babel-polyfill';
+import { React } from 'react';
+import { render } from 'react-dom';
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            aaa: 6666
-        };
-    }
-    render() {
-        const { aaa } = this.state;
-        return (
-            <div>444444{aaa} {bbb}</div>
-        );
-    }
+class MyComponent extends React.Component {
+  render() {
+    return <div>Hello World</div>;
+  }
 }
 
-render(
-    App,
-    document.getElementById('root')
-);
+render(<MyComponent />, document.getElementById('root'));

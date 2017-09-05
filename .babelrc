@@ -4,14 +4,20 @@
 */
 {
     "presets": [
-        "react" //转react
-    ],
-    "env": { //babel-preset-env
-        "development": {
-            "presets": [
-                "react-hmre"
-            ]
-        },
-        "useBuiltIns": true
-    }
+        "react",
+        [
+            "env",
+            {
+                "targets": {
+                    "browsers": [
+                        "last 2 versions",
+                        "safari >= 7"
+                    ],
+                    "node": "current"
+                },
+                "useBuiltIns": true,
+                "debug": true
+            }
+        ]
+    ]
 }

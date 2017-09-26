@@ -4,14 +4,13 @@ import path from 'path';
 
 import webpack from 'webpack'
 import { devMiddleware, hotMiddleware } from 'koa-webpack-middleware'
-import devConfig from '../webpack.config'
+import devConfig from '../webpack.config.koa'
 const compile = webpack(devConfig)
 
 const PORT = process.env.PORT || 3000
 const app = new Koa();
 debugger
 if (process.env.NODE_ENV == 'development') {
-    debugger
     app.use(devMiddleware(compile, {
         // display no info to console (only warnings and errors)
         noInfo: false,

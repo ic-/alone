@@ -8,13 +8,16 @@ module.exports = {
     devtool: 'eval-source-map',
     entry: {
         "app": [
-            // 'webpack/hot/dev-server',
-            // 'webpack-dev-server/client?http://localhost:8081/',
-            './client/index.js'
+            'eventsource-polyfill',
+            'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+            'babel-polyfill',
+            path.join(__dirname, 'client/index.js')
         ],
+        "vendor": ['react', 'babel-polyfill'],
     },
     output: {
         path: path.join(__dirname, '/dist'),
+        publicPath: '/assets/',
         filename: '[name].[hash].js',
     },
     module: {
@@ -51,18 +54,16 @@ module.exports = {
         ],
     },
     plugins: [
-        // OccurenceOrderPlugin is needed for webpack 1.x only
-        // new webpack.optimize.OccurrenceOrderPlugin(),
-        // new webpack.HotModuleReplacementPlugin(),  //hot
-        // new ExtractTextPlugin('styles.css'),  //提取style
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),  //hot
+        new ExtractTextPlugin('styles.css'),  //提取style
         new BabiliPlugin(),
-        // new webpack.optimize.CommonsChunkPlugin({   //提取公用函数
-        //     name: 'vendor',
-        // }),
+        new webpack.optimize.CommonsChunkPlugin({   //提取公用函数
+            name: 'vendor',
+        }),
         new HtmlWebpackPlugin({
             title: 'Webpack demo',
-            filename: 'index.html',
-            template: './views/index.html'
+            filename: 'index.html'
         }),
         new webpack.DefinePlugin({
             'process.env': {

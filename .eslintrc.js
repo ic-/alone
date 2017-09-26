@@ -1,6 +1,8 @@
 /**
  * auther: ke_xx
  * https://eslint.org/
+ * https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/es6.js
+ * http://eslint.cn/docs/rules/
  */
 module.exports = {
     "env": {
@@ -54,6 +56,5 @@ module.exports = {
     }
 };
 
-// https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/es6.js
-// http://eslint.cn/docs/rules/
+
 

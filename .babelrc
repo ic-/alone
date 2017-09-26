@@ -1,6 +1,5 @@
 /**
 * http://babeljs.io/docs/plugins/preset-env/
-* http://babeljs.io/docs/plugins/preset-env/
 */
 {
     "presets": [
@@ -8,16 +7,15 @@
         [
             "env",
             {
-                "targets": {
-                    "browsers": [
-                        "last 2 versions",
-                        "safari >= 7"
-                    ],
-                    "node": "current"
-                },
-                "useBuiltIns": true,
-                "debug": true
+                "modules": "commonjs", //设置ES6 模块转译的模块格式 默认是 commonjs
+                "debug": false, // debug，编译的时候 console
+                "include": [], // 总是启用哪些 plugins
+                "exclude": [], // 强制不启用哪些 plugins，用来防止某些插件被启用
+                "useBuiltIns": true // 是否开启自动支持 polyfill
             }
         ]
     ]
+    // "plugins": [
+    //   "transform-react-jsx" //如果是需要支持 jsx 这个东西要单独装一下。
+    // ]
 }

@@ -1,59 +1,68 @@
 {
-	"name": "alone",
-	"version": "1.0.0",
-	"description": "workflow",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon --exec babel-node  --presets=env ./server/index.js",
-		"dev": "webpack-dev-server --env development",
-		"build": "webpack --env production --profile --json > stats.js",
-		"lintJs": "eslint /app webpack.*.js --cache --fix"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ic-/alone.git"
-	},
-	"keywords": [
-		"react",
-		"redux",
-		"koa",
-		"mongo"
-	],
-	"author": "ic-",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/ic-/alone/issues"
-	},
-	"homepage": "https://github.com/ic-/alone#readme",
-	"dependencies": {
-		"babel-cli": "^6.26.0",
-		"babel-polyfill": "^6.26.0",
-		"babel-preset-react-hmre": "^1.1.1",
-		"koa": "^2.3.0",
-		"koa-static": "^4.0.1",
-		"koa-views": "^6.0.2",
-		"koa-webpack-middleware": "^1.0.7",
-		"react": "^15.6.1",
-		"react-dom": "^15.6.1"
-	},
-	"devDependencies": {
-		"babel-eslint": "^7.2.3",
-		"babel-loader": "^7.1.2",
-		"babel-preset-env": "^1.6.0",
-		"babel-preset-react": "^6.24.1",
-		"babili-webpack-plugin": "^0.1.2",
-		"css-loader": "^0.28.4",
-		"eslint": "^4.4.1",
-		"eslint-config-airbnb": "^15.1.0",
-		"eslint-loader": "^1.9.0",
-		"eslint-plugin-import": "^2.7.0",
-		"eslint-plugin-jsx-a11y": "^6.0.2",
-		"eslint-plugin-react": "^7.2.0",
-		"extract-text-webpack-plugin": "^3.0.0",
-		"html-webpack-plugin": "^2.30.1",
-		"style-loader": "^0.18.2",
-		"webpack": "^3.5.4",
-		"webpack-dev-server": "^2.7.1"
-	}
+    "name": "alone",
+    "version": "1.0.0",
+    "description": "workflow",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prestart": "webpack --config ./build/webpack.config.dll.js",
+        "start": "nodemon --exec babel-node  --presets=env ./server/index.js",
+        "dev": "webpack-dev-server --config webpack.config.dev.js",
+        "build": "webpack --env production --profile --json > stats.js",
+        "lintJs": "eslint /app webpack.*.js --cache --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ic-/alone.git"
+    },
+    "keywords": [
+        "react",
+        "redux",
+        "koa",
+        "mongo"
+    ],
+    "author": "ic-",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ic-/alone/issues"
+    },
+    "homepage": "https://github.com/ic-/alone#readme",
+    "dependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-plugin-add-module-exports": "^0.2.1",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-react-hmre": "^1.1.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "json-loader": "^0.5.7",
+        "koa": "^2.3.0",
+        "koa-static": "^4.0.1",
+        "koa-views": "^6.0.2",
+        "koa-webpack-middleware": "^1.0.7",
+        "react": "^15.6.1",
+        "react-dom": "^15.6.1",
+        "url-loader": "^0.5.9",
+        "webpack-merge": "^4.1.0"
+    },
+    "devDependencies": {
+        "babel-eslint": "^7.2.3",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-transform-react-jsx": "^6.24.1",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "babili-webpack-plugin": "^0.1.2",
+        "css-loader": "^0.28.4",
+        "eslint": "^4.4.1",
+        "eslint-config-airbnb": "^15.1.0",
+        "eslint-loader": "^1.9.0",
+        "eslint-plugin-import": "^2.7.0",
+        "eslint-plugin-jsx-a11y": "^6.0.2",
+        "eslint-plugin-react": "^7.2.0",
+        "extract-text-webpack-plugin": "^3.0.0",
+        "html-webpack-plugin": "^2.30.1",
+        "style-loader": "^0.18.2",
+        "webpack": "^3.6.0",
+        "webpack-dev-server": "^2.7.1"
+    }
 }

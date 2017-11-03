@@ -14,8 +14,9 @@
                 "useBuiltIns": true // 是否开启自动支持 polyfill
             }
         ]
+    ],
+    "plugins": [
+      "transform-class-properties",   // 解析类属性，静态和实例的属性
+      "transform-react-jsx" //如果是需要支持 jsx 这个东西要单独装一下。
     ]
-    // "plugins": [
-    //   "transform-react-jsx" //如果是需要支持 jsx 这个东西要单独装一下。
-    // ]
 }

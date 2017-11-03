@@ -24,7 +24,7 @@ Server.listen(8081, 'localhost', function (err, result) {
     }
     console.log('Webpack-dev-server started successfully!');
     console.log('----------------------------------------');
-    console.log('Listening at localhost: 8081\n');
+    console.log('Listening at localhost:8081\n');
 });
 
 module.exports = Server;

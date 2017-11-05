@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
-const config = require('../webpack.config.dev.js')
+const config = require('../build/webpack.config.dev.js')
 const compiler = webpack(config);
 let Server = new WebpackDevServer(compiler, {
     //gzip

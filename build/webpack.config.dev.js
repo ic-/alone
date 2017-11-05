@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path')
 const merge = require('webpack-merge')
-const config = require('./config/build.config')
+const config = require('../config/build.config')
 const baseWebpackConfig = require('./webpack.config.base.js')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -23,7 +23,7 @@ module.exports = merge(baseWebpackConfig, {
     }),
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require("./public/dll/manifest.json")
+      manifest: require("../public/dll/manifest.json")
     }),
   ]
 })

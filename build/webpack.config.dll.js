@@ -12,7 +12,7 @@ module.exports = {
     'redux-devtools-dock-monitor', 'redux-devtools-log-monitor', 'redux-logger']
   },
   output: {
-    path: path.join(__dirname, 'public', 'dll'),  //内存输出地址文件
+    path: path.join(__dirname, '../public', 'dll'),  //内存输出地址文件
     filename: '[name]_[hash].js',
     libraryTarget: 'umd',
     library: 'vendersLibrary',  // 配合下面的name 暴露出dll函数
@@ -21,7 +21,7 @@ module.exports = {
     new webpack.DllPlugin({
       context: __dirname,     // manifest 文件中请求的上下文环境 与DllReferencePlugin的context参数保持一致
       name: 'vendersLibrary',  // DLL 的函数名
-      path: path.join(__dirname, 'public', 'dll', 'manifest.json'),  //manifest json 文件的绝对路径 (输出文件)
+      path: path.join(__dirname, '../public', 'dll', 'manifest.json'),  //manifest json 文件的绝对路径 (输出文件)
     })
   ],
 };

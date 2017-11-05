@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path')
 const merge = require('webpack-merge')
-const config = require('../config/build.config')
+const config = require('./config/build.config')
 const baseWebpackConfig = require('./webpack.config.base.js')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -22,8 +22,8 @@ module.exports = merge(baseWebpackConfig, {
       name: 'vendor'
     }),
     new webpack.DllReferencePlugin({
-      context: path.join(__dirname, "..", "dll"),
-      manifest: require("../dll/manifest.json") // eslint-disable-line
+      context: __dirname,
+      manifest: require("./public/dll/manifest.json")
     }),
   ]
 })

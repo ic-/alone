@@ -12,7 +12,6 @@ const baseConfig = {
   // 多入口书写的形式应为object，因为object,的key在webpack里相当于此入口的name,
   entry: {
     app: ['./client/pages/home/index.js']
-
   },
   output: {
     //输出路径

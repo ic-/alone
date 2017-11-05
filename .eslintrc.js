@@ -55,6 +55,3 @@
 //         "class-methods-use-this": "off",
 //     }
 // };
-
-
-
